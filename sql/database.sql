@@ -38,6 +38,16 @@ CREATE TABLE userGroups (
 
 );
 
+-- User admin groups
+CREATE TABLE userAdminGroups (
+
+);
+
+-- User moderator groups
+CREATE TABLE userModeratorGroups (
+
+);
+
 -- Superadmin users
 CREATE TABLE superAdmin (
 id integer AUTO_INCREMENT,
