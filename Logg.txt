@@ -1,0 +1,4 @@
+-2015-02-21	
+Projekt påbörjat.
++ Grundmall till layouten
++ Grund till SQL
