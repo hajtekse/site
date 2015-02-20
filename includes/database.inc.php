@@ -91,8 +91,19 @@ class Database {
 	 * @return The number of affected rows
 	 */
 	private function executeUpdate($query, $param = null) {
-		// ...
-		
+		try {
+			$stmt = $this->conn->prepare($query);
+			$i=1;
+			foreach($param as &$par){
+				$stmt->bindParam($i, $par);
+				$i++;
+			}
+			$result = $stmt->execute();
+		} catch (PDOException $e) {
+			$error = "*** Internal error: " . $e->getMessage() . "<p>" . $query;
+			die($error);
+		}
+		return $result;
 	}
 	
 	/**
@@ -109,33 +120,9 @@ class Database {
 	}
 
 	/*
-	 * *** Add functions ***
+	 * *** Add Functions ***
 	 */
 	 
-	 /*
-	 Get the movienames from the database
-	 */
-	 public function getMovieNames() {
-		 $sql ="select moviename from movies";
-		 $result = $this->executeQuery($sql);
-		 return $result;
-	 }
-	 
-	/*
-	Get the dates a movie is performed.
-	*/
-	public function getMovieDates($movieName) {
-		 $sql ="SELECT performancedate FROM performances WHERE moviename = ?";
-		 $result = $this->executeQuery($sql, array($movieName));
-		 return $result;
-	 }
-	 
-	 /*
-	 
-	 */
-	 public function getPerformanceData() {
-		 
-	 }
 	 
 }
 ?>

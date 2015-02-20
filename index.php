@@ -23,19 +23,19 @@
 			
 			//Load correct menu
 			if ($page == "index") {
-				include_once "indexmenu.php";
+				include_once "menu/indexmenu.php";
 			} else if ($page == 'servers'){
-				include_once "serversmenu.php";
+				include_once "menu/serversmenu.php";
 			} else if($page == "feed"){
-				include_once "feedmenu.php";
+				include_once "menu/feedmenu.php";
 			} else if ($page == "info") {
-				include_once "infomenu.php";	
+				include_once "menu/infomenu.php";	
 			} else if ($page == "teams") {
-				include_once "teamsmenu.php";
+				include_once "menu/teamsmenu.php";
 			} else if ($page == "streams") {
-				include_once "streamsmenu.php";
+				include_once "menu/streamsmenu.php";
 			} else if ($page == "forum") {
-				include_once "forummenu.php";
+				include_once "menu/forummenu.php";
 			} else {
 				header("Location: ?page=index");
 			}
@@ -57,19 +57,19 @@
 		<?php 
 			//Load correct page
 			if($page == "index") {
-				include_once "indexcontent.php";
+				include_once "pages/indexcontent.php";
 			} else if ($page == "servers") {
-				include_once "servers.php";
+				include_once "pages/servers.php";
 			} else if($page == "feed"){
-				include_once "feed.php";
+				include_once "pages/feed.php";
 			} else if ($page == "info") {
-				include_once "info.php";	
+				include_once "pages/info.php";	
 			} else if ($page == "teams") {
-				include_once "teams.php";
+				include_once "pages/teams.php";
 			} else if ($page == "streams") {
-				include_once "streams.php";
+				include_once "pages/streams.php";
 			} else if ($page == "forum") {
-				include_once "forum.php";
+				include_once "pages/forum.php";
 			} else {
 				header("Location: ?page=index");
 			}
@@ -81,9 +81,8 @@
 	</div>
 	<div id="popup">
 		<div class="contsmallbanner haj">
-		Logga in
-		</div>
-		
+			Logga in
+		</div>	
 	</div>
 	</body>
 </html>
