@@ -29,6 +29,12 @@ UNIQUE (userName)
 
 -- Groups
 CREATE TABLE groups (
+id integer AUTO_INCREMENT,
+groupName varchar(20),
+);
+
+-- User Groups
+CREATE TABLE userGroups (
 
 );
 
@@ -93,12 +99,14 @@ FOREIGN KEY (receiverId) REFERENCES users(id)
 CREATE TABLE threads (
 id integer AUTO_INCREMENT,
 userId int default 0,
-
+PRIMARY KEY (id)
 );
 
 -- Forum thread replies
 CREATE TABLE threadReplies (
 id integer AUTO_INCREMENT,
 threadId int default 0,
-
+replytext text,
+PRIMARY KEY (id),
+FOREIGN KEY threadId REFERENCES threads(id)
 );
